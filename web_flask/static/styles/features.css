@@ -1,0 +1,124 @@
+.features {
+  background-color: white;
+  /* border-radius: 30px; */
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: solid 2px #da77f2; */
+  padding: 10px 0;
+}
+
+.featuresOdd {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* height: 34%; */
+  /* border: #ffec99 solid 2px; */
+  padding: 0 6%;
+}
+
+.featuresEven {
+  display: flex;
+  /* height: 32%; */
+  align-items: center;
+  width: 100%;
+  /* border: #ffc078 solid 2px; */
+  padding: 0 6%;
+  justify-content: end;
+}
+
+/* .odd1img {
+  background-image: url(../images/feature4bb.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 90%;
+  width: auto;
+  border: solid 1px #aeaeae;
+} */
+
+.oddimage {
+  /* height: 95%; */
+  height: 290px;
+  width: auto;
+  /* border: solid 1px #aeaeae; */
+}
+
+.features-text h5 {
+  max-width: 30vw;
+  padding: 0 2vw;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+  font-weight: 400;
+  /* border: solid 1px #aeae; */
+}
+
+/* .odd2img {
+  background-image: url(../images/feature2bb.svg);
+  background-size: contain;
+  width: 350px;
+  background-repeat: no-repeat;
+  height: 200px;
+  border: solid 1px #aeae;
+} */
+.evenimg {
+  background-image: url(../images/feature3bb.svg);
+  background-size: 200px;
+  width: 350px;
+  margin-left: 200px;
+  background-repeat: no-repeat;
+  height: 200px;
+  border: solid 1px #aeae;
+}
+
+@media screen and (max-width: 1199.98px) {
+  .features-text h5 {
+    font-size: 2.2rem;
+  }
+
+  .featuresEven {
+    padding: 0 4% 0 6%;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .featuresEven {
+    padding: 0 0 0 6%;
+  }
+
+  .features-text h5 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .featuresOdd {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .featuresEven {
+    display: flex;
+    flex-direction: column;
+    /* padding: 40px 0; */
+  }
+
+  .features-text h5 {
+    max-width: 80vw;
+    text-align: center;
+  }
+}
+
+footer {
+  width: 100%;
+  /* height: 5vh; */
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: var(--footer-color);
+}
+footer p {
+  font-size: 1.4rem;
+}
