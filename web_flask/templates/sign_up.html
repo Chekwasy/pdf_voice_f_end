@@ -1,68 +1,34 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="images/icon.png" />
-    <title>sign In</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../static/styles/landing-page.css" />
-    <link rel="stylesheet" href="../static/styles/header.css" />
-    <link rel="stylesheet" href="../static/styles/main.css" />
-    <link rel="stylesheet" href="../static/styles/features.css" />
-    <link rel="stylesheet" href="../static/styles/sign_in.css" />
-    <script
-      src="https://kit.fontawesome.com/e96e4f984c.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  </head>
-  <body>
-    <div class="form-container">
-      <div class="form-box">
-        <h1 id="title">Sign Up</h1>
-        <!-- <div class="head_logo">
-          <div class="head_logo2"></div>
-        </div> -->
-        <form id="signup_page"" method="POST">
-          <div class="input-group">
-            <div class="input-field" id="namefield">
-              <!-- <i class="fa-solid fa-user"></i> -->
-              <i class="fa-solid fa-envelope"></i>
-              <input type="email" id="email" placeholder="Email" required minlength="3" />
-            </div>
-            <div class="input-field">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" id="password" placeholder="Password" required minlength="6"/>
-            </div>
-            <div class="input-field">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" id="rpassword" placeholder="Renter Password" required minlength="6"/>
-            </div>
-            <div class="lost">
-              <p><a href="/generate_token">Forgot your password?</a></p>
-            </div>
-          </div>
-          <div class="btn-field">
-            <button type="submit" id="signupBtn">Sign up</button>
-            <p><a href="/signin">I have an account</a></p>
-          </div>
-        </form>
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block hm_page %}<a class="nav-link" href="#">Home</a>{% endblock hm_page %}
+
+{% block p_page %}<a class="nav-link" href="#">Profile</a>{% endblock p_page %}
+
+{% block l_page %}<a class="nav-link" href="#">Login</a>{% endblock l_page %}
+
+{% block r_page %}<a class="nav-link active" aria-current="page" href="#">Register</a>{% endblock r_page %}
+
+{% block template %}
+  <div class="d-flex align-items-center justify-content-center py-4 bg-body-tertiary">
+    <form>
+      <h1 class="h3 mb-3 fw-normal">Create An Account</h1>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
       </div>
-    </div>
-    <footer>
-      <p>Copyright © TalentPot. All Rights Reserved</p>
-    </footer>
-    <script
-      type="text/javascript"
-      src="../static/scripts/signup_script.js"
-    ></script>
-  </body>
-</html>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword2" placeholder="Password">
+        <label for="floatingPassword">Re-enter Password</label>
+      </div>
+
+      <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
+    </form>
+  </div>
+{% endblock template %}

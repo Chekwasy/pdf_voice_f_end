@@ -1,75 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="images/icon.png" />
-    <title>Password Reset</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../static/styles/landing-page.css" />
-    <link rel="stylesheet" href="../static/styles/header.css" />
-    <link rel="stylesheet" href="../static/styles/main.css" />
-    <link rel="stylesheet" href="../static/styles/features.css" />
-    <link rel="stylesheet" href="../static/styles/sign_in.css" />
-    <script
-      src="https://kit.fontawesome.com/e96e4f984c.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  </head>
-  <body>
-    <div class="form-container">
-      <div class="form-box">
-        <h2 id="title-token">Reset your password</h2>
-        <form id="gentoken" method="POST">
-          <div class="input-group-token">
-            <div class="input-field">
-              <i class="fa-solid fa-envelope"></i>
-              <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                required
-                minlength="3"
-              />
-            </div>
-          </div>
-          <div class="btn-field-token">
-            <button type="submit" id="signupBtn">Send me token</button>
-          </div>
-        </form>
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block hm_page %}<a class="nav-link" href="#">Home</a>{% endblock hm_page %}
+
+{% block p_page %}<a class="nav-link" href="#">Profile</a>{% endblock p_page %}
+
+{% block l_page %}<a class="nav-link active" aria-current="page" href="#">Login</a>{% endblock l_page %}
+
+{% block r_page %}<a class="nav-link" href="#">Register</a>{% endblock r_page %}
+
+{% block template %}
+  <div class="d-flex align-items-center justify-content-center py-4 bg-body-tertiary">
+    <form>
+      <h1 class="h3 mb-3 fw-normal">Generate Token</h1>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
       </div>
-    </div>
-    <script>
-      let signinBtn = document.getElementById("signinBtn");
-      let signupBtn = document.getElementById("signupBtn");
-      let namefield = document.getElementById("namefield");
-      let title = document.getElementById("title");
 
-      signinBtn.onclick = function () {
-        namefield.style.maxHeight = "0";
-        title.innerHTML = "Sign in";
-        signinBtn.classList.remove("disable");
-        signupBtn.classList.add("disable");
-      };
-
-      signupBtn.onclick = function () {
-        namefield.style.maxHeight = "65px";
-        title.innerHTML = "Sign up";
-        signinBtn.classList.add("disable");
-        signupBtn.classList.remove("disable");
-      };
-    </script>
-    <script
-      type="text/javascript"
-      src="../static/scripts/gentoken_script.js"
-    ></script>
-  </body>
-</html>
+      <button class="btn btn-primary w-100 py-2" type="submit">Generate Token</button>
+    </form>
+  </div>
+{% endblock template %}
